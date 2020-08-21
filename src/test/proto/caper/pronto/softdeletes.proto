@@ -1,0 +1,16 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+
+package caper.pronto;
+
+option java_package = "caper.pronto";
+option java_multiple_files = true;
+option java_generate_equals_and_hash = true;
+
+message SoftDelete {
+  string id = 1;
+  string word = 2;
+  bool deleted = 3;
+  google.protobuf.Timestamp created = 4;
+  google.protobuf.Timestamp updated = 5;
+}

@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package caper.pronto;
+
+option java_package = "caper.pronto";
+option java_generate_equals_and_hash = true;
+
+message RepeatingChild {
+  string child_id = 1;
+
+  oneof value {
+    string name = 2;
+    string preferred_name = 3;
+  }
+}
+
+message OldRepeatingParent {
+  string id = 1;
+  repeated RepeatingChild children = 2;
+  string primitive = 3;
+  RepeatingChild not_repeated_child = 4;
+}
+
+message RepeatingParent {
+  string id = 1;
+  repeated RepeatingChild children = 2;
+  repeated string primitive = 3;
+  RepeatingChild not_repeated_child = 4;
+}

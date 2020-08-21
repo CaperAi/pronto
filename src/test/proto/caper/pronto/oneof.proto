@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package caper.pronto;
+
+option java_package = "caper.pronto";
+option java_multiple_files = true;
+option java_generate_equals_and_hash = true;
+
+message NestedComplex {
+  int32 a = 1;
+}
+message Complex {
+  NestedComplex nested = 1;
+}
+
+message OneOfMessage {
+  string id = 1;
+  oneof something {
+    string a = 2;
+    string b = 3;
+    string c = 4;
+    Complex complex = 5;
+  }
+}

@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package caper.pronto;
+
+option java_package = "caper.pronto";
+option java_multiple_files = true;
+option java_generate_equals_and_hash = true;
+
+enum BasicEnum {
+  A = 0;
+  B = 1;
+}
+
+message BasicMessage {
+  string id = 1;
+  string basic_string = 2;
+  int32 basic_int32 = 3;
+  int64 basic_int64 = 4;
+  sint32 basic_signed_int32 = 5;
+  sint64 basic_signed_int64 = 6;
+  uint32 basic_unsigned_int32 = 7;
+  uint64 basic_unsigned_int64 = 8;
+  double basic_double = 9;
+  float basic_float = 10;
+  bool basic_bool = 11;
+  bytes basic_bytes = 12;
+  fixed32 basic_fixed32 = 13;
+  fixed64 basic_fixed64 = 14;
+  sfixed32 basic_unsigned_fixed32 = 15;
+  sfixed64 basic_unsigned_fixed64 = 16;
+  BasicEnum basic_enum = 17;
+}

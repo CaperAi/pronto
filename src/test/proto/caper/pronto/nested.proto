@@ -1,0 +1,17 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+
+package caper.pronto;
+
+option java_package = "caper.pronto";
+option java_generate_equals_and_hash = true;
+
+message Child {
+  string child_id = 1;
+}
+
+message Parent {
+  string id = 1;
+  Child our = 2;
+  google.protobuf.Timestamp external = 3;
+}
